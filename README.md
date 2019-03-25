@@ -2,6 +2,7 @@
 
 Mosaic Project
   - Picture sharing and liking application.
+  - Recommends post a user may like 
 
   Models:
     - User
@@ -23,7 +24,7 @@ Mosaic Project
   Notes:
     - when logged in, landing page defaults to a grid of Posts
     that are recommended for the user
-    
+
 
 
   Git workflow for this project:
