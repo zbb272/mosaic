@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <% if current_user  %>
+        <%= link_to "Home", posts_path %>
+        <%= link_to "Logout", logout_path, method: "DELETE" %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+
+
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -1,5 +1,13 @@
 <h1> Who You?</h1>
 
+<% if flash["errors"] %>
+  <ul>
+    <% flash["errors"].each do |error| %>
+      <li class="error"> <%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @user do |u|  %>
   <%= u.label :username %>
   <%= u.text_field :username %><br>
@@ -17,6 +25,13 @@
   <%= u.label :bio %>
   <%= u.text_area :bio %><br>
   <br>
+
+  <%= u.label :password %>
+  <%= u.password_field :password %><br>
+
+  <%= u.label :password_confirmation %>
+  <%= u.password_field :password_confirmation %><br>
+
 
   <%= u.submit "Upload Your Face!" %>
 
