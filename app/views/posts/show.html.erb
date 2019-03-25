@@ -1,0 +1,16 @@
+<h1><%= @post.title %></h1>
+<h2>Uploaded by: <%= link_to @post.user.username, user_path(@post.user) %></h2>
+
+<br>
+<%= image_tag(@post.img_url) %>
+<br>
+
+<h4>Description:</h4>
+<p><%= @post.description %></p>
+
+<h4>Tags:</h4>
+<ul>
+  <% @post.tags.each do | tag | %>
+    <li><%= tag.name %></li>
+  <% end %>
+</ul>
