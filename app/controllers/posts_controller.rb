@@ -7,4 +7,24 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    # byebug
+    # p = post_params
+    # p[:tag_ids].reject!(&:blank?)
+    @post = Post.create!(post_params)
+    redirect_to @post
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:img_url, :title, :description, :tag_ids => [])
+  end
+
+
 end

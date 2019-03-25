@@ -1,0 +1,21 @@
+<h1> Upload a Post! </h1>
+
+<%= form_for @post do |p|  %>
+  <%= p.label :img_url %>
+  <%= p.text_field :img_url %><br>
+  <br>
+
+  <%= p.label :title %>
+  <%= p.text_field :title %><br>
+  <br>
+
+  <%= p.label :description%>
+  <%= p.text_field :description%><br>
+  <br>
+
+  <%= p.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
+  <br>
+
+  <%= p.submit "Upload Your Junk!" %>
+
+  <% end %>
