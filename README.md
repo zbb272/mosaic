@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mosaic Project
+  - Picture sharing and liking application.
 
-Things you may want to cover:
+  Models:
+    - User
+    - Post
+    - Tag
+    - PostsTag
+    - Comment
+    - Like
 
-* Ruby version
+  Associations:
+    - User -< Posts &&
+      User -< Comments &&
+      User -< Likes
+    - Post -< Tags through PostsTag &&
+      Post -< Comments &&
+      Post -< Likes
+    - Tag  -< Posts through PostsTag
 
-* System dependencies
+  Notes:
+    - when logged in, landing page defaults to a grid of Posts
+    that are recommended for the user
+    
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Git workflow for this project:
+    - Checkout 'your-name' branch
+    - Make changes
+    - Add changes made to git
+    - Commit changes
+    - Checkout local master branch
+    - Pull from master branch on cloud
+    - Merge 'your-name' branch with local master branch
+    - Resolve merge conflicts
+    - Make sure it is working
+    - Push up to master branch on cloud
