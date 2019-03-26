@@ -15,3 +15,15 @@
     <li><%= tag.name %></li>
   <% end %>
 </ul>
+<br>
+<% if current_user %>
+  <%= link_to "Like", new_like_path, method: :post %>
+<% end %>
+
+<br>
+<h4>Likes:</h4>
+<ul>
+  <% @post.likes.each do |like| %>
+    <li> Liked by: <%= like.user.username %></li>
+  <% end %>
+</ul>

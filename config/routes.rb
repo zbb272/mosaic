@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users, :posts, :tags
   root "posts#index"
   get '/users/:id/settings', to: "users#settings", as: "settings"
+  post '/posts/:id', to: "posts#create_like", as: "new_like"
 
 end

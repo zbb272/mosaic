@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
 
+  def create_like
+    @post = Post.find(params[:id])
+    @post.likes << Like.create(:user_id => session["user_id"])
+    # byebug
+    redirect_to post_path(@post)
+  end
+
   def index
     @posts = Post.all
   end
