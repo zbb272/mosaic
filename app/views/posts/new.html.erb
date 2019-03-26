@@ -16,6 +16,14 @@
   <%= p.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
   <br>
 
+  Create a new tag: <br>
+  <%= p.fields_for :tags do |tag_attributes| %>
+    <%= tag_attributes.label :name %>
+    <%= tag_attributes.text_field :name %>
+  <% end %>
+
+
+
   <%= p.submit "Upload Your Junk!" %>
 
   <% end %>

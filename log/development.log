@@ -2261,3 +2261,1221 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/posts" for ::1 at 2019-03-26 09:49:37 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 247ms (Views: 230.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 09:50:55 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_posts_path' for #<#<Class:0x00007fd44cf81100>:0x00007fd44d7ba8a8>
+Did you mean?  new_post_path
+               new_user_path):
+    13:       <% if current_user  %>
+    14:         <%= link_to "Home", posts_path %>
+    15:         Current User: <%= link_to current_user, user_path(current_user_object) %>
+    16:         <%= link_to "Add New Post", new_posts_path %>
+    17:         <%= link_to "Logout", logout_path, method: "DELETE" %>
+    18:       <% else %>
+    19:         <%= link_to "Login", login_path %>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__2120179848914697238_70274904905360'
+Started GET "/posts" for ::1 at 2019-03-26 09:51:11 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 09:51:12 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (131.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 184ms (Views: 141.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 09:52:00 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XmPqqF4mj0Vw1dIfIACcYSIIR52gsgraQIEjuYx2NMSbLFciYI/FwFnaybPjTQJULjNzCh1fQjPS7sFQyRBVzA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Cool Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Unpermitted parameter: :tags_attributes
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Tag ids can't be blank):
+  
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 09:55:03 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XmPqqF4mj0Vw1dIfIACcYSIIR52gsgraQIEjuYx2NMSbLFciYI/FwFnaybPjTQJULjNzCh1fQjPS7sFQyRBVzA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Cool Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Unpermitted parameter: :tags_attributes
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 28ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Tag ids can't be blank):
+  
+app/controllers/posts_controller.rb:20:in `create'
+Started GET "/posts" for ::1 at 2019-03-26 10:04:38 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 28.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 10:04:40 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 12.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 10:05:00 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2TzGpX9BXmna6c61JCzrP+NWQXa9+/i87mLYsG1AdOwcc3svQegU7PPm1RnnYXUK72114QAWsFV8DTpZKCYV5A==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"It's Food", "description"=>"Delicious food!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Unpermitted parameter: :tags_attributes
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `tag_attributes' for #<Post:0x00007fd44db80320>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:05:21 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2TzGpX9BXmna6c61JCzrP+NWQXa9+/i87mLYsG1AdOwcc3svQegU7PPm1RnnYXUK72114QAWsFV8DTpZKCYV5A==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"It's Food", "description"=>"Delicious food!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Unpermitted parameter: :tags_attributes
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `tags_attributes' for #<Post:0x00007fd44dbc84b8>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:07:23 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2TzGpX9BXmna6c61JCzrP+NWQXa9+/i87mLYsG1AdOwcc3svQegU7PPm1RnnYXUK72114QAWsFV8DTpZKCYV5A==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"It's Food", "description"=>"Delicious food!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Unpermitted parameter: :tags_attributes
+Unpermitted parameter: :tags_attributes
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 163741ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (undefined local variable or method `tags_attributes' for #<Post:0x00007fd452182e90>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started GET "/posts" for ::1 at 2019-03-26 10:10:20 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 205ms (Views: 190.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 10:10:23 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (74.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 110ms (Views: 83.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 10:10:36 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 25478ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `tags_attributes' for #<Post:0x00007fe4551d1d70>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:11:11 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 2.8ms)
+
+
+  
+NameError (undefined local variable or method `tags_attributes' for #<Post:0x00007fe45457c228>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:14:03 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `tags_attributes' for #<Post:0x00007fe4501b3d98>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:14:34 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `params' for #<Post:0x00007fe44f760760>):
+  
+app/models/post.rb:9:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:15:07 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 18748ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `params' for #<Post:0x00007fe44f894960>):
+  
+app/models/post.rb:10:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:15:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 520616ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `params' for #<Post:0x00007fafb26b1700>):
+  
+app/models/post.rb:10:in `block in <class:Post>'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 10:24:45 -0400
+Started GET "/posts" for ::1 at 2019-03-26 10:24:55 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl2/SrB9Zoo8xyqBhCtjeiviDmDANU65dPfDhWNck697EgLAjtQsDxXIMS1HZv1PJ9k6933YBlDmmCFsJjrypw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice!", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+Completed 500 Internal Server Error in 7ms
+
+
+  
+NameError (uninitialized constant Post::TagValidate):
+  
+app/models/post.rb:11:in `<class:Post>'
+app/models/post.rb:1:in `<top (required)>'
+app/controllers/posts_controller.rb:20:in `create'
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 7ms
+
+
+  
+NameError (uninitialized constant Post::TagValidate):
+  
+app/models/post.rb:11:in `<class:Post>'
+app/models/post.rb:1:in `<top (required)>'
+app/controllers/posts_controller.rb:4:in `index'
+Started GET "/posts" for ::1 at 2019-03-26 10:25:44 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 204ms (Views: 198.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 10:25:47 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (72.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 82.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 10:26:04 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `tags_attributes' for #<Post:0x00007fafb8a31640>
+Did you mean?  tags_attributes=):
+  
+app/models/post.rb:3:in `validate'
+app/controllers/posts_controller.rb:20:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:05:00 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 43ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Tag must have a tag):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:05:43 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 52ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Tag test must have a tag):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:06:27 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 26ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Post test must have a tag):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started GET "/" for ::1 at 2019-03-26 13:06:56 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/benmanekin/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/benmanekin/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6.2/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:06:59 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:07:19 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:12:44 -0400
+  
+SyntaxError (/Users/benmanekin/Development/flatiron/mod2/project/mosaic/app/controllers/posts_controller.rb:41: syntax error, unexpected ')', expecting =>
+...ttributes: [:name], :user[:id])
+...                              ^):
+  
+app/controllers/posts_controller.rb:41: syntax error, unexpected ')', expecting =>
+Started POST "/posts" for ::1 at 2019-03-26 13:13:30 -0400
+  
+SyntaxError (/Users/benmanekin/Development/flatiron/mod2/project/mosaic/app/controllers/posts_controller.rb:41: syntax error, unexpected ')', expecting =>
+..._attributes: [:name], :user_id)
+...                              ^):
+  
+app/controllers/posts_controller.rb:41: syntax error, unexpected ')', expecting =>
+Started POST "/posts" for ::1 at 2019-03-26 13:17:21 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 43ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist, Post test must have a tag):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:18:01 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:18:28 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 106077ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:20:19 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 40041ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:21:02 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 37ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:21:16 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 171726ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:24:16 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 38ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/posts_controller.rb:21:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:25:54 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTImg0a4/15TLqp46iNIIIRFAKnNRpHynwlG9kkvjGb0fZsJeBG123ohsdQpbtYViH40PnCr2RsNZqQfDEntbg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice?", "description"=>"Could be rice. Maybe it isn't.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"food"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1769356/pexels-photo-1769356.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Rice?"], ["description", "Could be rice. Maybe it isn't."], ["user_id", 6], ["created_at", "2019-03-26 17:28:31.999875"], ["updated_at", "2019-03-26 17:28:31.999875"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "food"], ["created_at", "2019-03-26 17:28:32.003747"], ["updated_at", "2019-03-26 17:28:32.003747"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 6], ["tag_id", 6], ["created_at", "2019-03-26 17:28:32.013042"], ["updated_at", "2019-03-26 17:28:32.013042"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 157620ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/posts/6" for ::1 at 2019-03-26 13:28:32 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/show.html.erb within layouts/application (20.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:29:20 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 42.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:30:17 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+OVPc8w0Zs6T/o5+fbH0Be3WFWngABQt+11zTYHFYzurCi38ZmbHhNA4ZU6u1nlG4xswhptSLklgpckc2F0hA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Definitely rice this time", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"orange"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:30:17 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:31:08 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 18.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:31:25 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AkzuTXEYwGNRVJFZb6sYQBlxXBKlnVbXFHT40m9h/X/HA1PHT7GK5nhbivWs5oZ1FUpohRhwHj6GGxo7Kgecdw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice again", "description"=>"It's rice, baby!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"orange"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 186511ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:34:32 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:34:48 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 20.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:34:51 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:35:13 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"08SK4cwCQ4mcLAruXM6M0xV00jYTuSIbMwPAauufaaAvyLvRr1n5BJcMpwUEouRKYRk8uwtGLCXSByehiV46rg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1161468/pexels-photo-1161468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Rice, Rice, Baby", "description"=>"Delicious food!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"orange"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 65559ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:36:18 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:36:23 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:36:25 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 13.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:37:15 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IhsXodF4W+CmLAho5ym4eKBCEP9wf8bvzBO2BQmmjEPnVKor79ERZY8jE8QkZCZNrHkkaM2SjgZefFTsTMDtSw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Food!", "description"=>"It's food!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"healthy"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:37:15 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6" for ::1 at 2019-03-26 13:37:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/6" for ::1 at 2019-03-26 13:37:26 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 6]]
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:37:58 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:38:14 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kMkQ+hJ3dkoW4d2IRycFslcm351+31cprFcIlXvhIbxVhq1wLN48zz/uxiSEapuHWx3rCsMyH8A+OOp8PodAtA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Tasty food", "description"=>"The best food", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"healthy"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:38:14 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:38:25 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 47.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:38:40 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QlL2LTd1SI+CyW4Uarj4OErw8om2BuB+1OOUWFpODm+HHUunCdwCCqvGdbip9WYNRsvGHgvrqJdGjHaxHyhvZw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Food!", "description"=>"It's food, dummy", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"healthy"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 138881ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:40:58 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:41:14 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 19.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:41:33 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xjyjs0fu/yf6KgJkF3RtWuT81eGHPONdr48BftHbyXgDcx45eUe1otMlGcjUOfNv6MfhdjrRq7Q94OOXlL2ocA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"My Diet", "description"=>"The souls of unwanted children", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"healthy"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "My Diet"], ["description", "The souls of unwanted children"], ["user_id", 6], ["created_at", "2019-03-26 17:41:33.395847"], ["updated_at", "2019-03-26 17:41:33.395847"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "healthy"], ["created_at", "2019-03-26 17:41:33.397464"], ["updated_at", "2019-03-26 17:41:33.397464"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 7], ["tag_id", 7], ["created_at", "2019-03-26 17:41:33.408822"], ["updated_at", "2019-03-26 17:41:33.408822"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 23ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/7" for ::1 at 2019-03-26 13:41:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/show.html.erb within layouts/application (4.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:41:41 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:42:05 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s4VmMKwC6urcVTtGOUvybUKHeUAN1tDVUDCIGn7zBQx2ytu6kqugb/VaIOr6BmxYTrxN17A7mDzCX2rzO5VkBA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Test"], ["description", "Duplicating submissions is fun!"], ["user_id", 6], ["created_at", "2019-03-26 17:42:05.161185"], ["updated_at", "2019-03-26 17:42:05.161185"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2019-03-26 17:42:05.163449"], ["updated_at", "2019-03-26 17:42:05.163449"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 8], ["tag_id", 8], ["created_at", "2019-03-26 17:42:05.166956"], ["updated_at", "2019-03-26 17:42:05.166956"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/8
+Completed 302 Found in 16ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-03-26 13:42:05 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/show.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/" for ::1 at 2019-03-26 13:42:12 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:43:00 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 20.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:43:59 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VQmkRYJhtWoZbxDdxbuG2lp65+k4CeJNTr5qof2klYeQRhnPvMj/7zBgC3EG9hjvVkHTfoXkqqTc0YhIuML0jw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1029844/pexels-photo-1029844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Leaf!", "description"=>"Holdin' leaves like a champ", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1029844/pexels-photo-1029844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Leaf!"], ["description", "Holdin' leaves like a champ"], ["user_id", 6], ["created_at", "2019-03-26 17:43:59.561010"], ["updated_at", "2019-03-26 17:43:59.561010"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2019-03-26 17:43:59.562685"], ["updated_at", "2019-03-26 17:43:59.562685"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 9], ["tag_id", 9], ["created_at", "2019-03-26 17:43:59.593478"], ["updated_at", "2019-03-26 17:43:59.593478"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 69ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/posts/9" for ::1 at 2019-03-26 13:43:59 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 9]]
+  Rendered posts/show.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-26 13:44:31 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/benmanekin/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/benmanekin/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6.2/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:44:34 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/6" for ::1 at 2019-03-26 13:44:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/6" for ::1 at 2019-03-26 13:44:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:44:52 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:45:58 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 21.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:46:13 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uuy4+1QcuaXOW1eFf68pLHeq9oaF/AGwdyIMLxpyGqx/owVxarXzIOdUTCm84rcZe5HCETgRSVnlTe7GXxR7pA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Dope Window", "description"=>"the window is dope.", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Dope Window"], ["description", "the window is dope."], ["user_id", 6], ["created_at", "2019-03-26 17:50:28.050197"], ["updated_at", "2019-03-26 17:50:28.050197"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2019-03-26 17:50:28.052516"], ["updated_at", "2019-03-26 17:50:28.052516"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 10], ["tag_id", 10], ["created_at", "2019-03-26 17:50:28.065720"], ["updated_at", "2019-03-26 17:50:28.065720"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/10
+Completed 302 Found in 254097ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/10" for ::1 at 2019-03-26 13:50:28 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 10]]
+  Rendered posts/show.html.erb within layouts/application (5.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:50:33 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 23.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:50:51 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wJ+zOxEFaNNHG9HHsfbOEZj+Qby4Ho+kzFmseEkwI7UF0A6xL6wiVm4Uymtyu1AklMV1KwXzx01eNk6RDFZCvQ==", "post"=>{"img_url"=>"https://images.pexels.com/photos/921294/pexels-photo-921294.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Another Dope Window", "description"=>"I like windows, okay?", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-26 13:50:51 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6" for ::1 at 2019-03-26 13:51:04 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/10" for ::1 at 2019-03-26 13:51:06 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 10]]
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:51:36 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:52:27 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r3BL4Boa9Pki/MjNjRLtSG5YRaIQ+4WT6wJYtO6UKdRqP/ZqJLO+fAvz02FOX3N9YmNxNa0WzXp5bbpdq/JI3A==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 33ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Post test must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:52:53 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r3BL4Boa9Pki/MjNjRLtSG5YRaIQ+4WT6wJYtO6UKdRqP/ZqJLO+fAvz02FOX3N9YmNxNa0WzXp5bbpdq/JI3A==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 31ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Post must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started GET "/posts" for ::1 at 2019-03-26 13:53:01 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:53:02 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:53:24 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7MwEYKstmdkX2uurbABwIvGpYqzZUUSfRDXC157OJxW/I2bvAX84k1QcAJu/Z/1h/2RHQ6IDfvvfzXiGx1ZlA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"Weird"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Post must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:53:56 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7MwEYKstmdkX2uurbABwIvGpYqzZUUSfRDXC157OJxW/I2bvAX84k1QcAJu/Z/1h/2RHQ6IDfvvfzXiGx1ZlA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"Weird"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 103589ms (ActiveRecord: 1.6ms)
+
+
+  
+Started POST "/posts" for ::1 at 2019-03-26 13:55:40 -0400
+ActiveRecord::RecordInvalid (Validation failed: Post must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7MwEYKstmdkX2uurbABwIvGpYqzZUUSfRDXC157OJxW/I2bvAX84k1QcAJu/Z/1h/2RHQ6IDfvvfzXiGx1ZlA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"Weird"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 1908ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Post must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:55:49 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7MwEYKstmdkX2uurbABwIvGpYqzZUUSfRDXC157OJxW/I2bvAX84k1QcAJu/Z/1h/2RHQ6IDfvvfzXiGx1ZlA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Hands of Milk", "description"=>"It puts the lotion on its skin...", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"Weird"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1138149/pexels-photo-1138149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Hands of Milk"], ["description", "It puts the lotion on its skin..."], ["user_id", 6], ["created_at", "2019-03-26 17:55:49.988201"], ["updated_at", "2019-03-26 17:55:49.988201"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Weird"], ["created_at", "2019-03-26 17:55:49.989446"], ["updated_at", "2019-03-26 17:55:49.989446"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 11], ["tag_id", 11], ["created_at", "2019-03-26 17:55:49.996339"], ["updated_at", "2019-03-26 17:55:49.996339"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/11
+Completed 302 Found in 42ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts/11" for ::1 at 2019-03-26 13:55:50 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 11]]
+  Rendered posts/show.html.erb within layouts/application (3.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 13:56:00 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 13:56:50 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hgGRL+9rPZ0nmwnPDbYeLtcrB9IyCvTfRP16N/xfSaRDTiyl0cJ3GA6UEmPO+4Ab2xAzRY/nvDbWkpjeuTkorA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1188470/pexels-photo-1188470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Adventure!", "description"=>"Swashbuckling fun on the high seas!", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Post must have a tag):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started POST "/posts" for ::1 at 2019-03-26 13:57:08 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6/C3rnTAmOwU/kxN/xyflKtSVFvDpAXcpAPWfX12W38X/IaeF5siYR/e4aancPcN3z+61ttbC+JFBzG2H7cIcQ==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1188470/pexels-photo-1188470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"Adventure!", "description"=>"Swashbuckling fun on the high seas!", "tag_ids"=>["", "3"], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 3[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1188470/pexels-photo-1188470.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "Adventure!"], ["description", "Swashbuckling fun on the high seas!"], ["user_id", 6], ["created_at", "2019-03-26 17:57:08.148065"], ["updated_at", "2019-03-26 17:57:08.148065"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 12], ["tag_id", 3], ["created_at", "2019-03-26 17:57:08.150190"], ["updated_at", "2019-03-26 17:57:08.150190"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", ""], ["created_at", "2019-03-26 17:57:08.152483"], ["updated_at", "2019-03-26 17:57:08.152483"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 12], ["tag_id", 12], ["created_at", "2019-03-26 17:57:08.154731"], ["updated_at", "2019-03-26 17:57:08.154731"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/12
+Completed 302 Found in 19ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/12" for ::1 at 2019-03-26 13:57:08 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 12]]
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 14:00:54 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (28.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 43.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 14:01:43 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G28BSWC3p5sNiF/CKUrM9BDITYfemY/CNZXwtDPxCFzeILzDXh7tHiSHRG7qB1LBHPN5EGN0xyun+hJddpdpVA==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1034361/pexels-photo-1034361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"The Witches", "description"=>"They're comin' for ya, bruski", "tag_ids"=>["", "11"], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 11[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1034361/pexels-photo-1034361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "The Witches"], ["description", "They're comin' for ya, bruski"], ["user_id", 6], ["created_at", "2019-03-26 18:01:43.974642"], ["updated_at", "2019-03-26 18:01:43.974642"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 13], ["tag_id", 11], ["created_at", "2019-03-26 18:01:43.976305"], ["updated_at", "2019-03-26 18:01:43.976305"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/13
+Completed 302 Found in 19ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/13" for ::1 at 2019-03-26 14:01:43 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 13]]
+  Rendered posts/show.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 14:02:04 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-26 14:02:54 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+UErWD0+F2bA1joJbiSaMKgcqHDE2TmkLcDBSUgDc5o8DpbSA5dd4+nZIaWtaQQFpCec53k0cU2/ryOgDWUSkg==", "post"=>{"img_url"=>"https://images.pexels.com/photos/1229846/pexels-photo-1229846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "title"=>"TLC's Classic", "description"=>"It's a reference, dawg", "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"name"=>"R&B"}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE 1=0[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/1229846/pexels-photo-1229846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"], ["title", "TLC's Classic"], ["description", "It's a reference, dawg"], ["user_id", 6], ["created_at", "2019-03-26 18:02:54.109573"], ["updated_at", "2019-03-26 18:02:54.109573"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "R&B"], ["created_at", "2019-03-26 18:02:54.111540"], ["updated_at", "2019-03-26 18:02:54.111540"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 14], ["tag_id", 13], ["created_at", "2019-03-26 18:02:54.114093"], ["updated_at", "2019-03-26 18:02:54.114093"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/14
+Completed 302 Found in 16ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts/14" for ::1 at 2019-03-26 14:02:54 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 14]]
+  Rendered posts/show.html.erb within layouts/application (4.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-26 14:02:59 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (7.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+
+

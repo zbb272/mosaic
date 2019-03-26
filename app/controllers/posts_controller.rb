@@ -10,13 +10,18 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.tags.build
   end
 
   def create
     # byebug
     # p = post_params
     # p[:tag_ids].reject!(&:blank?)
-    @post = Post.create!(post_params)
+    @post = Post.new(post_params)
+    # @post = Post.create!(post_params)
+    # byebug
+    @post.user_id = session["user_id"]
+    @post.save!
     redirect_to @post
   end
 
@@ -36,7 +41,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:img_url, :title, :description, :tag_ids => [])
+    params.require(:post).permit(:img_url, :title, :description, :tag_ids => [], tags_attributes: [:name])
   end
 
 
