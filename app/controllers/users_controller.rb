@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+  def settings
+    @user = User.find(params[:id])
+    if session["user_id"] == @user.id
+      render :settings
+    else
+      redirect_to root_path
+    end
+  end
+
   def index
     @users = User.all
   end
@@ -22,6 +31,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.delete
+    redirect_to root_path
+  end
+
 
   private
 

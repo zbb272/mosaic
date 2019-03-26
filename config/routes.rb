@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
   resources :users, :posts, :tags
+  root "posts#index"
+  get '/users/:id/settings', to: "users#settings", as: "settings"
 
 end
