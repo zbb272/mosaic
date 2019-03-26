@@ -1,5 +1,23 @@
 class UsersController < ApplicationController
 
+  def display_feed
+    @user = User.find(params[:id])
+    @posts = feed_posts(@user)
+    @tags = liked_tags(@user)
+    render :feed
+  end
+
+  def liked_tags(user)
+    liked = user.posts.collect do |post|
+      post.tags
+    end
+    liked.uniq!
+  end
+
+  def feed_posts(user)
+    posts = user.posts
+  end
+
   def settings
     @user = User.find(params[:id])
     if session["user_id"] == @user.id

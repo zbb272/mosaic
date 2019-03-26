@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root "posts#index"
   get '/users/:id/settings', to: "users#settings", as: "settings"
   post '/posts/:id', to: "posts#create_like", as: "new_like"
+  get '/users/:id/feed', to: "users#display_feed", as: "feed"
 
 end
