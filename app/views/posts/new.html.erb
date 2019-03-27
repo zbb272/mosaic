@@ -5,6 +5,9 @@
   <%= p.text_field :img_url %><br>
   <br>
 
+  <%# <%= p.file_field :picture, direct_upload: true %> %>
+  <br><br>
+
   <%= p.label :title %>
   <%= p.text_field :title %><br>
   <br>
@@ -22,7 +25,7 @@
     <%= tag_attributes.text_field :name %>
   <% end %>
 
-
+  <br><br>
 
   <%= p.submit "Upload Your Junk!" %>
 

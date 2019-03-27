@@ -19,7 +19,7 @@
         <%= link_to "My Feed", feed_path(current_user_object) %>
         <%= link_to "Settings", settings_path(current_user_object) %>
       <% else %>
-        <%= link_to "Home", posts_path %>
+        <%= link_to "Home", root_path %>
         <%= link_to "Login", login_path %>
         <%= link_to "Browse All Tags", tags_path %>
         <%= link_to "New User", new_user_path %>

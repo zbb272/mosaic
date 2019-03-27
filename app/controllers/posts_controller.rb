@@ -37,6 +37,11 @@ class PostsController < ApplicationController
     # byebug
     @post.user_id = session["user_id"]
     @post.save!
+    # picture = params.require(:post).permit(post: [:picture])
+    # picture = params[:post][:picture]
+    # byebug
+    # @post.picture.attach(params[:post][:picture])
+    # byebug
     redirect_to @post
   end
 
