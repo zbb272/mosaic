@@ -11,7 +11,7 @@
   <body>
     <div class="navbar">
       <% if current_user  %>
-        <%= link_to "Home", posts_path %>
+        <%= link_to "Home", root_path %>
         Current User: <%= link_to current_user, user_path(current_user_object) %>
         <%= link_to "Add New Post", new_post_path %>
         <%= link_to "Browse All Tags", tags_path %>
