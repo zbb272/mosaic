@@ -8,7 +8,16 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if params[:post_search]
+      #@posts = []
+      @posts = Post.where('title LIKE ?', "#{params[:post_search]}")
+      tags = Tag.where('name LIKE ?', "#{params[:post_search]}")
+      tags.each do | tag |
+        @posts += tag.posts
+      end
+    else
+      @posts = Post.all
+    end
   end
 
   def show
