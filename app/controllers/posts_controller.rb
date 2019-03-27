@@ -9,7 +9,6 @@ class PostsController < ApplicationController
 
   def index
     if params[:post_search]
-      #@posts = []
       @posts = Post.where('title LIKE ?', "#{params[:post_search]}")
       tags = Tag.where('name LIKE ?', "#{params[:post_search]}")
       tags.each do | tag |
@@ -52,6 +51,12 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
   end
 
   private

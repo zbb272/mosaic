@@ -4966,3 +4966,1018 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/posts" for ::1 at 2019-03-27 09:43:15 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (35.1ms)
+Started GET "/posts" for ::1 at 2019-03-27 09:43:16 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 231ms (Views: 227.4ms | ActiveRecord: 2.2ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 627ms (Views: 601.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&post_search=lady" for ::1 at 2019-03-27 09:43:21 -0400
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "post_search"=>"lady"}
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE (name LIKE 'lady')[0m
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (title LIKE 'lady')[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 23.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for ::1 at 2019-03-27 09:48:03 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (23.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 644ms (Views: 620.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-27 09:48:05 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (25.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 119ms (Views: 97.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/1" for ::1 at 2019-03-27 09:48:07 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (75.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 100.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2019-03-27 09:48:08 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (171.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 206ms (Views: 198.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2019-03-27 09:49:26 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/edit.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 156ms (Views: 129.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tags" for ::1 at 2019-03-27 09:50:06 -0400
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 168ms (Views: 156.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/tags/5" for ::1 at 2019-03-27 09:50:23 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tags/show.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "posts_tags" ON "posts"."id" = "posts_tags"."post_id" WHERE "posts_tags"."tag_id" = ?[0m  [["tag_id", 5]]
+  Rendered tags/show.html.erb within layouts/application (37.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 116.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-27 09:50:26 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/7" for ::1 at 2019-03-27 09:50:31 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 7]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 7]]
+  Rendered posts/show.html.erb within layouts/application (54.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 81.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/8" for ::1 at 2019-03-27 09:50:34 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLike Load (7.8ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 8]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (29.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 45.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/posts/8/edit" for ::1 at 2019-03-27 09:50:41 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (24.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/posts/8" for ::1 at 2019-03-27 09:50:43 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m2WekYilEQVgEp4Oa/sI1oiVw9GmhIeKT0I6l1GDDZ19c9gNHQTUpR6kR7XYNK4NSGgUxtlFSCtBoNns5UoW8A==", "post"=>{"title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>["", "8"]}, "commit"=>"Delete Post", "id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started PUT "/__web_console/repl_sessions/17205ddd59ccc368f600693aecb16ace" for ::1 at 2019-03-27 09:51:39 -0400
+Started PUT "/__web_console/repl_sessions/17205ddd59ccc368f600693aecb16ace" for ::1 at 2019-03-27 09:51:40 -0400
+Started DELETE "/posts/8" for ::1 at 2019-03-27 09:55:48 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m2WekYilEQVgEp4Oa/sI1oiVw9GmhIeKT0I6l1GDDZ19c9gNHQTUpR6kR7XYNK4NSGgUxtlFSCtBoNns5UoW8A==", "post"=>{"title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>["", "8"]}, "commit"=>"Delete Post", "id"=>"8"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started GET "/posts/8/edit" for ::1 at 2019-03-27 09:55:56 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (8.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (72.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 179ms (Views: 164.2ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/posts/8/edit" for ::1 at 2019-03-27 09:55:57 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 8]]
+  Rendered posts/edit.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/posts/8" for ::1 at 2019-03-27 09:55:59 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmbOUpNJa0XQl9TQT/+prUtaxSotp9vkqoFb/m3kuec+9axwtK7uq94wzH9ITsSB6e13fCt/Z6LYXrCln57AoA==", "post"=>{"title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>["", "8"]}, "commit"=>"Delete Post", "id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/8" for ::1 at 2019-03-27 09:58:08 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmbOUpNJa0XQl9TQT/+prUtaxSotp9vkqoFb/m3kuec+9axwtK7uq94wzH9ITsSB6e13fCt/Z6LYXrCln57AoA==", "post"=>{"title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>["", "8"]}, "commit"=>"Delete Post", "id"=>"8"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (5.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 6.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/8" for ::1 at 2019-03-27 09:59:14 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmbOUpNJa0XQl9TQT/+prUtaxSotp9vkqoFb/m3kuec+9axwtK7uq94wzH9ITsSB6e13fCt/Z6LYXrCln57AoA==", "post"=>{"title"=>"Test", "description"=>"Duplicating submissions is fun!", "tag_ids"=>["", "8"]}, "commit"=>"Delete Post", "id"=>"8"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started GET "/login" for ::1 at 2019-03-27 09:59:22 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/new" for ::1 at 2019-03-27 09:59:24 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (57.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 132ms (Views: 108.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2019-03-27 10:00:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N7BdBclNwngOqEPyo42RRivdOjDCgyC6/DF6E/078Nk69slrlslelGlWIAnW7NHoJDqgw2T+v50uQSsOUyuX+Q==", "user"=>{"username"=>"zach2", "first_name"=>"Zach", "last_name"=>"Ber", "bio"=>"llama llama llama", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Upload Your Face!"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "zach2"], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "zach2"], ["first_name", "Zach"], ["last_name", "Ber"], ["bio", "llama llama llama"], ["created_at", "2019-03-27 14:00:11.395093"], ["updated_at", "2019-03-27 14:00:11.395093"], ["password_digest", "$2a$10$Vu9upIavY7yTQwwEGFKwhu4ZTanrU5Lorpo7QfmwRfpwW.SKLvXQu"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 166ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-27 10:00:11 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 123.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-27 10:00:16 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-27 10:03:49 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S3c3/iFkFTCtXQFAud/tgfPLQI3j7VTaAd0M9WPKgujGkcGaVlCVmoDdMHIF2RBfvWK7+AskZ3AApk7YE72u3w==", "post"=>{"img_url"=>"https://images.pexels.com/photos/2029478/pexels-photo-2029478.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", "title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (2.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = 3[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/2029478/pexels-photo-2029478.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"], ["title", "testing "], ["description", "describes me"], ["user_id", 9], ["created_at", "2019-03-27 14:03:49.825625"], ["updated_at", "2019-03-27 14:03:49.825625"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 15], ["tag_id", 3], ["created_at", "2019-03-27 14:03:49.831276"], ["updated_at", "2019-03-27 14:03:49.831276"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/15
+Completed 302 Found in 110ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/posts/15" for ::1 at 2019-03-27 10:03:49 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 139ms (Views: 131.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts/15" for ::1 at 2019-03-27 10:04:01 -0400
+Processing by PostsController#create_like as HTML
+  Parameters: {"authenticity_token"=>"HLokKepUVUHWgRKW7dgXMgkq/qur/jH//zo8hFQV+g9MKUYLzbPQr9gmCjnqaXoeq51M/a0mjbmN5dffpm+DSA==", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 15], ["user_id", 9], ["created_at", "2019-03-27 14:04:01.389051"], ["updated_at", "2019-03-27 14:04:01.389051"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/15
+Completed 302 Found in 43ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/15" for ::1 at 2019-03-27 10:04:01 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 70ms (Views: 64.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:04:11 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:04:14 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:07:09 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPostsTag Load (0.2ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 6.7ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:10:00 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 5.1ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:13:43 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:22:23 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 5.7ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:23:06 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:24:04 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:25:29 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCIO21HyHM9O7GO9172JiPWXVc62EqjGrMTfvUeC60/mZcpUhhorGBxRQuI33eT7o1JqY/D6DIt8NTq4LjUDPg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPostsTag Load (0.3ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 4.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:25:34 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (237.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 801ms (Views: 793.1ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:25:37 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wf6pw1rTO/GWqt4XKZ3mFvx/kVLgbm4FcdWPNvQzs3WRbcvhfTS+H5gNxrguLIs6XsgjBOa20kMDCmRtBknKMg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPostsTag Load (0.1ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:25:49 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:25:49 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:25:56 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:00 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:06 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:13 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:24 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:25 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:36 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:40 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:41 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:43 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:26:49 -0400
+  [1m[36mTag Load (1.6ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ? LIMIT ?[0m  [["post_id", 15], ["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:02 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:04 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:06 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:10 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:13 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:14 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:21 -0400
+Started PUT "/__web_console/repl_sessions/56f72877c097a11a1a5194925b501c98" for ::1 at 2019-03-27 10:27:22 -0400
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:30:25 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (42.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 153ms (Views: 108.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:30:27 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 143ms (Views: 139.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:30:28 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:30:29 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:30:29 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:30:30 -0400
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for PostsController):
+  
+actionpack (5.1.6.2) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6.2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6.2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6.2) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/15" for ::1 at 2019-03-27 10:30:42 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 129ms (Views: 103.2ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:30:44 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPostsTag Load (0.4ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (8.8ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 11.3ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:31:00 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:31:18 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+Completed 500 Internal Server Error in 7ms
+
+
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception], but is :delete):
+  
+app/models/post.rb:17:in `<class:Post>'
+app/models/post.rb:12:in `<top (required)>'
+app/controllers/posts_controller.rb:57:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:31:40 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:33:44 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPostsTag Load (0.1ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 5.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:39:38 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VecusMO2SmMdCTkOf7uMIsfaTpxgHekWFvGHCHY2hF4FdEyS5FHPjROuIaF4CuEOZW38ymbFVVBkLmxThEz9GQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 8.9ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:39:42 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (33.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 78.9ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:39:45 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"otEEprJNyJBw9/I0Nt5xcHAWk3iaUZqOG0RpAmfbfK/yQmaElapNfn5Q6psxbxxc0qEhLpyJJshpm4JZlaEF6A==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:40:13 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"otEEprJNyJBw9/I0Nt5xcHAWk3iaUZqOG0RpAmfbfK/yQmaElapNfn5Q6psxbxxc0qEhLpyJJshpm4JZlaEF6A==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:40:17 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (29.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 3.2ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:40:20 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXwmAYIADPqKGZ3A6sLkbAMY2bYzR3DfyNlgollMi8n970QjpeeJFIS+hW/tc4lAoa9r4DWfzJm6Bov5qzbyjg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:58:in `destroy'
+Started PUT "/__web_console/repl_sessions/34fdcbf68e4a726a58c0fc38ecb12abe" for ::1 at 2019-03-27 10:41:02 -0400
+Started PUT "/__web_console/repl_sessions/34fdcbf68e4a726a58c0fc38ecb12abe" for ::1 at 2019-03-27 10:41:02 -0400
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:42:14 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXwmAYIADPqKGZ3A6sLkbAMY2bYzR3DfyNlgollMi8n970QjpeeJFIS+hW/tc4lAoa9r4DWfzJm6Bov5qzbyjg==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 86760ms (ActiveRecord: 6.1ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed: DELETE FROM "posts" WHERE "posts"."id" = ?):
+  
+app/controllers/posts_controller.rb:59:in `destroy'
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:44:52 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  Rendered posts/edit.html.erb within layouts/application (233.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 709ms (Views: 657.2ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/posts/15" for ::1 at 2019-03-27 10:45:04 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLlwDJ5gghhKb0zBIMKlBC50p7bBe81UHgV5W6rQhI40KhIuuYcH9kTIVG4nc8gojMMV4MejcRJs2pIAWKr9yQ==", "post"=>{"title"=>"testing ", "description"=>"describes me", "tag_ids"=>["", "3"]}, "commit"=>"Delete Post", "id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 3]]
+  [1m[36mPostsTag Load (0.2ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5201ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-27 10:45:10 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 149.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-27 10:45:24 -0400
+Started GET "/posts/15/edit" for ::1 at 2019-03-27 10:45:34 -0400
+Started GET "/posts/15" for ::1 at 2019-03-27 10:45:34 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (128.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 223ms (Views: 211.9ms | ActiveRecord: 4.4ms)
+
+
+Processing by PostsController#edit as HTML
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"15"}
+  Parameters: {"id"=>"15"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 404 Not Found in 22ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=15):
+  
+app/controllers/posts_controller.rb:44:in `edit'
+Completed 404 Not Found in 21ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=15):
+  
+app/controllers/posts_controller.rb:23:in `show'
+Started GET "/" for ::1 at 2019-03-27 10:46:00 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 89.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-27 10:46:03 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered posts/new.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 36.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-27 10:46:32 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ux6XJzrPt6UMfXP/0BWeq6ZmkVTUisNDlGjU+83WwZA2+GFDTfs3DyH9Qs1sE2N16M9qITxD8OmVE5bWvaHtpw==", "post"=>{"img_url"=>"https://images.pexels.com/photos/2029478/pexels-photo-2029478.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", "title"=>"testing", "description"=>"this is a test", "tag_ids"=>["", "1", "2"], "tags_attributes"=>{"0"=>{"name"=>""}}}, "commit"=>"Upload Your Junk!"}
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (1, 2)[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://images.pexels.com/photos/2029478/pexels-photo-2029478.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"], ["title", "testing"], ["description", "this is a test"], ["user_id", 9], ["created_at", "2019-03-27 14:46:33.107970"], ["updated_at", "2019-03-27 14:46:33.107970"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 16], ["tag_id", 1], ["created_at", "2019-03-27 14:46:33.111587"], ["updated_at", "2019-03-27 14:46:33.111587"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 16], ["tag_id", 2], ["created_at", "2019-03-27 14:46:33.114410"], ["updated_at", "2019-03-27 14:46:33.114410"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/16
+Completed 302 Found in 170ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/posts/16" for ::1 at 2019-03-27 10:46:33 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 16]]
+  Rendered posts/show.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 226ms (Views: 220.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/posts/16" for ::1 at 2019-03-27 10:46:37 -0400
+Processing by PostsController#create_like as HTML
+  Parameters: {"authenticity_token"=>"uZA/m0XEUymEL9R39Kn0NG1knm1yPhGzLPcyomk/QgXpA125YiPWx4qIzNjzGJkYz9MsO3TmrfVeKNn5m0U7Qg==", "id"=>"16"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 16], ["user_id", 9], ["created_at", "2019-03-27 14:46:37.585769"], ["updated_at", "2019-03-27 14:46:37.585769"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/16
+Completed 302 Found in 34ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/16" for ::1 at 2019-03-27 10:46:37 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts/16" for ::1 at 2019-03-27 10:46:39 -0400
+Processing by PostsController#create_like as HTML
+  Parameters: {"authenticity_token"=>"RH8/BcFO7PhB6mrpVQQUlsfUqHiFRvb9EFQ1fAZbP9YU7F0n5qlpFk9NckZStXm6ZWMaLoOeSrtii94n9CFGkQ==", "id"=>"16"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 16], ["user_id", 9], ["created_at", "2019-03-27 14:46:39.855585"], ["updated_at", "2019-03-27 14:46:39.855585"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/16
+Completed 302 Found in 28ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/posts/16" for ::1 at 2019-03-27 10:46:39 -0400
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 145ms (Views: 139.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/16/edit" for ::1 at 2019-03-27 10:46:43 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "tags"."id" FROM "tags" INNER JOIN "posts_tags" ON "tags"."id" = "posts_tags"."tag_id" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 16]]
+  Rendered posts/edit.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 43.6ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/posts/16" for ::1 at 2019-03-27 10:46:44 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8o/zyNvMg/NdSCnt/AxUkIU0426ZBugze6nVv8jNVX4qHDOPFQU3M2B2a4yo5ZjiMZnIT8lxi44JulEUFZ+DSA==", "post"=>{"title"=>"testing", "description"=>"this is a test", "tag_ids"=>["", "1", "2"]}, "commit"=>"Delete Post", "id"=>"16"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 5]]
+  [1m[36mPostsTag Load (0.3ms)[0m  [1m[34mSELECT "posts_tags".* FROM "posts_tags" WHERE "posts_tags"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 18]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "posts_tags" WHERE "posts_tags"."id" = ?[0m  [["id", 19]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 16]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-27 10:46:44 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 0.7ms)
+
+
