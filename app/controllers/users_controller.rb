@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
   def feed_posts(user)
     posts = liked_posts(user)
-    
+
     # posts = User.likes.posts.sample(15)
     # liked_tags(user).each do |tag|
     #   posts += tag.posts.sample(60 / liked_tags.length)
