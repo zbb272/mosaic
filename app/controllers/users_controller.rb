@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 
   def display_feed
     @user = User.find(params[:id])
-    @posts = User.feed_posts(@user)
-    @tags = User.liked_tags(@user)
+    @posts = @user.feed_posts
+    @tags = @user.liked_tags
     render :feed
   end
 
