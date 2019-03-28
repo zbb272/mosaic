@@ -53,6 +53,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if !(@post.user == current_user_object)
+      redirect_to post_path
+    end
   end
 
   def update
@@ -66,6 +69,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    if !(@post.user == current_user_object)
+      redirect_to post_path
+    end
     @post.destroy
     redirect_to root_path
   end

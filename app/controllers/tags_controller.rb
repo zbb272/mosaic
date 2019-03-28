@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_action :admin_authorized, only: [:edit, :destroy]
+
   def create
     @tag = Tag.create(tag_params)
   end
@@ -9,6 +11,16 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
+  end
+
+  def edit
+    @tag = Tag.find(params[:id])
+  end
+
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.delete
+    redirect_to tags_path
   end
 
   private
