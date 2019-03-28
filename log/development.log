@@ -12766,3 +12766,938 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 263ms (Views: 215.9ms | ActiveRecord: 12.2ms)
 
 
+Started GET "/" for ::1 at 2019-03-28 09:09:08 -0400
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (50.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 876ms (Views: 831.4ms | ActiveRecord: 6.3ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[31mDELETE FROM "tags"[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "likes"[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[31mDELETE FROM "posts_tags"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user1"], ["first_name", "fname1"], ["last_name", "lname1"], ["bio", "Bio for user1"], ["created_at", "2019-03-28 13:09:31.704732"], ["updated_at", "2019-03-28 13:09:31.704732"], ["password_digest", "$2a$10$JQ3IX8teF2s6JZK8CplzD..VH4qvv9akvOOMhJEM2eRJAXWzwIbKW"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user2"], ["first_name", "fname2"], ["last_name", "lname2"], ["bio", "Bio for user2"], ["created_at", "2019-03-28 13:09:31.811839"], ["updated_at", "2019-03-28 13:09:31.811839"], ["password_digest", "$2a$10$NhNmVa4V2Yr1k5PK1i.ZDOzcQHGLrfCFq15ltC./gpdEhLgpdNUUe"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user3"], ["first_name", "fname3"], ["last_name", "lname3"], ["bio", "Bio for user3"], ["created_at", "2019-03-28 13:09:31.914647"], ["updated_at", "2019-03-28 13:09:31.914647"], ["password_digest", "$2a$10$bpo077XBWgJtxQI08oLHr.D94sQpoiwBXKzfGsNDwTquiVoKaUc9q"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user4"], ["first_name", "fname4"], ["last_name", "lname4"], ["bio", "Bio for user4"], ["created_at", "2019-03-28 13:09:32.019416"], ["updated_at", "2019-03-28 13:09:32.019416"], ["password_digest", "$2a$10$AuSmyMxxxt2iggLAHcMtguoiAIoTyxQTD33MiB1IeJBnZxa5P7y1q"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user5"], ["first_name", "fname5"], ["last_name", "lname5"], ["bio", "Bio for user5"], ["created_at", "2019-03-28 13:09:32.123707"], ["updated_at", "2019-03-28 13:09:32.123707"], ["password_digest", "$2a$10$Rc30Xt8n3ewP8JMCgQVk3uWVrRMsxczkX3VZau8z38XW.pFfFsmvS"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user6"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user6"], ["first_name", "fname6"], ["last_name", "lname6"], ["bio", "Bio for user6"], ["created_at", "2019-03-28 13:09:32.225961"], ["updated_at", "2019-03-28 13:09:32.225961"], ["password_digest", "$2a$10$JVT/ckeBb16DXtjyf.IT4OzaUNYlxm0JTEjePsCKo8lAJlP9IF9Ya"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user7"], ["first_name", "fname7"], ["last_name", "lname7"], ["bio", "Bio for user7"], ["created_at", "2019-03-28 13:09:32.324208"], ["updated_at", "2019-03-28 13:09:32.324208"], ["password_digest", "$2a$10$dzJACQXKDUud1bAhAZyj1O4pPUm3EzN3ikBsiOezHxgzScUXJVBfS"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user8"], ["first_name", "fname8"], ["last_name", "lname8"], ["bio", "Bio for user8"], ["created_at", "2019-03-28 13:09:32.426099"], ["updated_at", "2019-03-28 13:09:32.426099"], ["password_digest", "$2a$10$3rOP0jtPURXSUFXkxC3z6O7QrZHiK8MsOO1VhOzydqU.GKpTphEPC"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user9"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user9"], ["first_name", "fname9"], ["last_name", "lname9"], ["bio", "Bio for user9"], ["created_at", "2019-03-28 13:09:32.530746"], ["updated_at", "2019-03-28 13:09:32.530746"], ["password_digest", "$2a$10$DCg0a5QWwNOE43cuzU0vgenGBVnIdCZG/IoWuMgmWsg90cu5FJrpq"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "first_name", "last_name", "bio", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user10"], ["first_name", "fname10"], ["last_name", "lname10"], ["bio", "Bio for user10"], ["created_at", "2019-03-28 13:09:32.627313"], ["updated_at", "2019-03-28 13:09:32.627313"], ["password_digest", "$2a$10$ztQ4k/d/ZppF63pu6G6YmucOSjfIVaQDjdM1IhcfCGvuvUgMWHiSi"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Nature"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nature"], ["created_at", "2019-03-28 13:09:32.639785"], ["updated_at", "2019-03-28 13:09:32.639785"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Weather"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Weather"], ["created_at", "2019-03-28 13:09:32.646072"], ["updated_at", "2019-03-28 13:09:32.646072"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Portait"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Portait"], ["created_at", "2019-03-28 13:09:32.653625"], ["updated_at", "2019-03-28 13:09:32.653625"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Colorful"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colorful"], ["created_at", "2019-03-28 13:09:32.658052"], ["updated_at", "2019-03-28 13:09:32.658052"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Vintage"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vintage"], ["created_at", "2019-03-28 13:09:32.663652"], ["updated_at", "2019-03-28 13:09:32.663652"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Space"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Space"], ["created_at", "2019-03-28 13:09:32.668445"], ["updated_at", "2019-03-28 13:09:32.668445"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Dark"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dark"], ["created_at", "2019-03-28 13:09:32.672787"], ["updated_at", "2019-03-28 13:09:32.672787"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Food"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Food"], ["created_at", "2019-03-28 13:09:32.677310"], ["updated_at", "2019-03-28 13:09:32.677310"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Animals"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Animals"], ["created_at", "2019-03-28 13:09:32.682133"], ["updated_at", "2019-03-28 13:09:32.682133"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "Technics"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Technics"], ["created_at", "2019-03-28 13:09:32.686458"], ["updated_at", "2019-03-28 13:09:32.686458"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=1"], ["title", "post1"], ["description", "here is the description for post1"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.818729"], ["updated_at", "2019-03-28 13:09:32.818729"]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 315], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.821380"], ["updated_at", "2019-03-28 13:09:32.821380"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 315], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.869432"], ["updated_at", "2019-03-28 13:09:32.869432"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=2"], ["title", "post2"], ["description", "here is the description for post2"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.877525"], ["updated_at", "2019-03-28 13:09:32.877525"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 316], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.879775"], ["updated_at", "2019-03-28 13:09:32.879775"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 316], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.884189"], ["updated_at", "2019-03-28 13:09:32.884189"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=3"], ["title", "post3"], ["description", "here is the description for post3"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.890711"], ["updated_at", "2019-03-28 13:09:32.890711"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 317], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.892419"], ["updated_at", "2019-03-28 13:09:32.892419"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 317], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.896454"], ["updated_at", "2019-03-28 13:09:32.896454"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=4"], ["title", "post4"], ["description", "here is the description for post4"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.901915"], ["updated_at", "2019-03-28 13:09:32.901915"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 318], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.903795"], ["updated_at", "2019-03-28 13:09:32.903795"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 318], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.909081"], ["updated_at", "2019-03-28 13:09:32.909081"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=5"], ["title", "post5"], ["description", "here is the description for post5"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.919863"], ["updated_at", "2019-03-28 13:09:32.919863"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 319], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.924025"], ["updated_at", "2019-03-28 13:09:32.924025"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 319], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.928836"], ["updated_at", "2019-03-28 13:09:32.928836"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=6"], ["title", "post6"], ["description", "here is the description for post6"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.938744"], ["updated_at", "2019-03-28 13:09:32.938744"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 320], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.941516"], ["updated_at", "2019-03-28 13:09:32.941516"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 320], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.947680"], ["updated_at", "2019-03-28 13:09:32.947680"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=7"], ["title", "post7"], ["description", "here is the description for post7"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.957686"], ["updated_at", "2019-03-28 13:09:32.957686"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 321], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.960296"], ["updated_at", "2019-03-28 13:09:32.960296"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 321], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.969426"], ["updated_at", "2019-03-28 13:09:32.969426"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=8"], ["title", "post8"], ["description", "here is the description for post8"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.978716"], ["updated_at", "2019-03-28 13:09:32.978716"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 322], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.981338"], ["updated_at", "2019-03-28 13:09:32.981338"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 322], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.986566"], ["updated_at", "2019-03-28 13:09:32.986566"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=9"], ["title", "post9"], ["description", "here is the description for post9"], ["user_id", 41], ["created_at", "2019-03-28 13:09:32.994292"], ["updated_at", "2019-03-28 13:09:32.994292"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 323], ["tag_id", 41], ["created_at", "2019-03-28 13:09:32.997215"], ["updated_at", "2019-03-28 13:09:32.997215"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 323], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.001968"], ["updated_at", "2019-03-28 13:09:33.001968"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Nature"], ["id", 41], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Nature?random=10"], ["title", "post10"], ["description", "here is the description for post10"], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.009105"], ["updated_at", "2019-03-28 13:09:33.009105"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 324], ["tag_id", 41], ["created_at", "2019-03-28 13:09:33.011325"], ["updated_at", "2019-03-28 13:09:33.011325"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 324], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.015862"], ["updated_at", "2019-03-28 13:09:33.015862"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=11"], ["title", "post11"], ["description", "here is the description for post11"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.026263"], ["updated_at", "2019-03-28 13:09:33.026263"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 325], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.028750"], ["updated_at", "2019-03-28 13:09:33.028750"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 325], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.034515"], ["updated_at", "2019-03-28 13:09:33.034515"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=12"], ["title", "post12"], ["description", "here is the description for post12"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.042223"], ["updated_at", "2019-03-28 13:09:33.042223"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 326], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.044210"], ["updated_at", "2019-03-28 13:09:33.044210"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 326], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.049411"], ["updated_at", "2019-03-28 13:09:33.049411"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=13"], ["title", "post13"], ["description", "here is the description for post13"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.056471"], ["updated_at", "2019-03-28 13:09:33.056471"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 327], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.058764"], ["updated_at", "2019-03-28 13:09:33.058764"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 327], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.063902"], ["updated_at", "2019-03-28 13:09:33.063902"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=14"], ["title", "post14"], ["description", "here is the description for post14"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.072331"], ["updated_at", "2019-03-28 13:09:33.072331"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 328], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.074381"], ["updated_at", "2019-03-28 13:09:33.074381"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 328], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.079455"], ["updated_at", "2019-03-28 13:09:33.079455"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=15"], ["title", "post15"], ["description", "here is the description for post15"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.088273"], ["updated_at", "2019-03-28 13:09:33.088273"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 329], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.090878"], ["updated_at", "2019-03-28 13:09:33.090878"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 329], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.095724"], ["updated_at", "2019-03-28 13:09:33.095724"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=16"], ["title", "post16"], ["description", "here is the description for post16"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.106482"], ["updated_at", "2019-03-28 13:09:33.106482"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 330], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.109090"], ["updated_at", "2019-03-28 13:09:33.109090"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 330], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.123823"], ["updated_at", "2019-03-28 13:09:33.123823"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=17"], ["title", "post17"], ["description", "here is the description for post17"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.132820"], ["updated_at", "2019-03-28 13:09:33.132820"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 331], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.135100"], ["updated_at", "2019-03-28 13:09:33.135100"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 331], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.140156"], ["updated_at", "2019-03-28 13:09:33.140156"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=18"], ["title", "post18"], ["description", "here is the description for post18"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.146821"], ["updated_at", "2019-03-28 13:09:33.146821"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 332], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.148561"], ["updated_at", "2019-03-28 13:09:33.148561"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 332], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.152503"], ["updated_at", "2019-03-28 13:09:33.152503"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=19"], ["title", "post19"], ["description", "here is the description for post19"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.158625"], ["updated_at", "2019-03-28 13:09:33.158625"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 333], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.160600"], ["updated_at", "2019-03-28 13:09:33.160600"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 333], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.165514"], ["updated_at", "2019-03-28 13:09:33.165514"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Weather"], ["id", 42], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Weather?random=20"], ["title", "post20"], ["description", "here is the description for post20"], ["user_id", 42], ["created_at", "2019-03-28 13:09:33.171749"], ["updated_at", "2019-03-28 13:09:33.171749"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 334], ["tag_id", 42], ["created_at", "2019-03-28 13:09:33.173744"], ["updated_at", "2019-03-28 13:09:33.173744"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 334], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.178806"], ["updated_at", "2019-03-28 13:09:33.178806"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=21"], ["title", "post21"], ["description", "here is the description for post21"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.186785"], ["updated_at", "2019-03-28 13:09:33.186785"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 335], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.190134"], ["updated_at", "2019-03-28 13:09:33.190134"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 335], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.195384"], ["updated_at", "2019-03-28 13:09:33.195384"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=22"], ["title", "post22"], ["description", "here is the description for post22"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.204072"], ["updated_at", "2019-03-28 13:09:33.204072"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 336], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.206408"], ["updated_at", "2019-03-28 13:09:33.206408"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 336], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.240848"], ["updated_at", "2019-03-28 13:09:33.240848"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=23"], ["title", "post23"], ["description", "here is the description for post23"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.250269"], ["updated_at", "2019-03-28 13:09:33.250269"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 337], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.253044"], ["updated_at", "2019-03-28 13:09:33.253044"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 337], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.257866"], ["updated_at", "2019-03-28 13:09:33.257866"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=24"], ["title", "post24"], ["description", "here is the description for post24"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.264676"], ["updated_at", "2019-03-28 13:09:33.264676"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 338], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.266733"], ["updated_at", "2019-03-28 13:09:33.266733"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 338], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.271394"], ["updated_at", "2019-03-28 13:09:33.271394"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=25"], ["title", "post25"], ["description", "here is the description for post25"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.281029"], ["updated_at", "2019-03-28 13:09:33.281029"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 339], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.283055"], ["updated_at", "2019-03-28 13:09:33.283055"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 339], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.286130"], ["updated_at", "2019-03-28 13:09:33.286130"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=26"], ["title", "post26"], ["description", "here is the description for post26"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.291954"], ["updated_at", "2019-03-28 13:09:33.291954"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 340], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.294088"], ["updated_at", "2019-03-28 13:09:33.294088"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 340], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.298473"], ["updated_at", "2019-03-28 13:09:33.298473"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=27"], ["title", "post27"], ["description", "here is the description for post27"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.307374"], ["updated_at", "2019-03-28 13:09:33.307374"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 341], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.311394"], ["updated_at", "2019-03-28 13:09:33.311394"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 341], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.316103"], ["updated_at", "2019-03-28 13:09:33.316103"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=28"], ["title", "post28"], ["description", "here is the description for post28"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.334025"], ["updated_at", "2019-03-28 13:09:33.334025"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 342], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.336453"], ["updated_at", "2019-03-28 13:09:33.336453"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 342], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.341325"], ["updated_at", "2019-03-28 13:09:33.341325"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=29"], ["title", "post29"], ["description", "here is the description for post29"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.350115"], ["updated_at", "2019-03-28 13:09:33.350115"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 343], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.352859"], ["updated_at", "2019-03-28 13:09:33.352859"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 343], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.357316"], ["updated_at", "2019-03-28 13:09:33.357316"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Portait"], ["id", 43], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Portait?random=30"], ["title", "post30"], ["description", "here is the description for post30"], ["user_id", 43], ["created_at", "2019-03-28 13:09:33.367462"], ["updated_at", "2019-03-28 13:09:33.367462"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 344], ["tag_id", 43], ["created_at", "2019-03-28 13:09:33.369983"], ["updated_at", "2019-03-28 13:09:33.369983"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 344], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.374567"], ["updated_at", "2019-03-28 13:09:33.374567"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=31"], ["title", "post31"], ["description", "here is the description for post31"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.382769"], ["updated_at", "2019-03-28 13:09:33.382769"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 345], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.385160"], ["updated_at", "2019-03-28 13:09:33.385160"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 345], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.388425"], ["updated_at", "2019-03-28 13:09:33.388425"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=32"], ["title", "post32"], ["description", "here is the description for post32"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.398679"], ["updated_at", "2019-03-28 13:09:33.398679"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 346], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.401557"], ["updated_at", "2019-03-28 13:09:33.401557"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 346], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.404828"], ["updated_at", "2019-03-28 13:09:33.404828"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=33"], ["title", "post33"], ["description", "here is the description for post33"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.410534"], ["updated_at", "2019-03-28 13:09:33.410534"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 347], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.413061"], ["updated_at", "2019-03-28 13:09:33.413061"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 347], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.416312"], ["updated_at", "2019-03-28 13:09:33.416312"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=34"], ["title", "post34"], ["description", "here is the description for post34"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.425444"], ["updated_at", "2019-03-28 13:09:33.425444"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 348], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.427516"], ["updated_at", "2019-03-28 13:09:33.427516"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 348], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.431778"], ["updated_at", "2019-03-28 13:09:33.431778"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=35"], ["title", "post35"], ["description", "here is the description for post35"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.438844"], ["updated_at", "2019-03-28 13:09:33.438844"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 349], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.441109"], ["updated_at", "2019-03-28 13:09:33.441109"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 349], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.450318"], ["updated_at", "2019-03-28 13:09:33.450318"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=36"], ["title", "post36"], ["description", "here is the description for post36"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.460035"], ["updated_at", "2019-03-28 13:09:33.460035"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 350], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.462236"], ["updated_at", "2019-03-28 13:09:33.462236"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 350], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.469153"], ["updated_at", "2019-03-28 13:09:33.469153"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=37"], ["title", "post37"], ["description", "here is the description for post37"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.483237"], ["updated_at", "2019-03-28 13:09:33.483237"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 351], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.486428"], ["updated_at", "2019-03-28 13:09:33.486428"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 351], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.490813"], ["updated_at", "2019-03-28 13:09:33.490813"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=38"], ["title", "post38"], ["description", "here is the description for post38"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.499379"], ["updated_at", "2019-03-28 13:09:33.499379"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 352], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.501055"], ["updated_at", "2019-03-28 13:09:33.501055"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 352], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.504376"], ["updated_at", "2019-03-28 13:09:33.504376"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=39"], ["title", "post39"], ["description", "here is the description for post39"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.510189"], ["updated_at", "2019-03-28 13:09:33.510189"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 353], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.511888"], ["updated_at", "2019-03-28 13:09:33.511888"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 353], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.515403"], ["updated_at", "2019-03-28 13:09:33.515403"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Colorful"], ["id", 44], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Colorful?random=40"], ["title", "post40"], ["description", "here is the description for post40"], ["user_id", 44], ["created_at", "2019-03-28 13:09:33.522219"], ["updated_at", "2019-03-28 13:09:33.522219"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 354], ["tag_id", 44], ["created_at", "2019-03-28 13:09:33.524933"], ["updated_at", "2019-03-28 13:09:33.524933"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 354], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.530448"], ["updated_at", "2019-03-28 13:09:33.530448"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=41"], ["title", "post41"], ["description", "here is the description for post41"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.539917"], ["updated_at", "2019-03-28 13:09:33.539917"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 355], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.542601"], ["updated_at", "2019-03-28 13:09:33.542601"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 355], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.546778"], ["updated_at", "2019-03-28 13:09:33.546778"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=42"], ["title", "post42"], ["description", "here is the description for post42"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.552156"], ["updated_at", "2019-03-28 13:09:33.552156"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 356], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.554665"], ["updated_at", "2019-03-28 13:09:33.554665"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 356], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.560585"], ["updated_at", "2019-03-28 13:09:33.560585"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=43"], ["title", "post43"], ["description", "here is the description for post43"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.570614"], ["updated_at", "2019-03-28 13:09:33.570614"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 357], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.572982"], ["updated_at", "2019-03-28 13:09:33.572982"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 357], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.576221"], ["updated_at", "2019-03-28 13:09:33.576221"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=44"], ["title", "post44"], ["description", "here is the description for post44"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.581726"], ["updated_at", "2019-03-28 13:09:33.581726"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 358], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.583342"], ["updated_at", "2019-03-28 13:09:33.583342"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 358], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.586693"], ["updated_at", "2019-03-28 13:09:33.586693"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=45"], ["title", "post45"], ["description", "here is the description for post45"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.592171"], ["updated_at", "2019-03-28 13:09:33.592171"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 359], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.593777"], ["updated_at", "2019-03-28 13:09:33.593777"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 359], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.597147"], ["updated_at", "2019-03-28 13:09:33.597147"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=46"], ["title", "post46"], ["description", "here is the description for post46"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.605946"], ["updated_at", "2019-03-28 13:09:33.605946"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 360], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.608935"], ["updated_at", "2019-03-28 13:09:33.608935"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 360], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.614340"], ["updated_at", "2019-03-28 13:09:33.614340"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=47"], ["title", "post47"], ["description", "here is the description for post47"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.635515"], ["updated_at", "2019-03-28 13:09:33.635515"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 361], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.637758"], ["updated_at", "2019-03-28 13:09:33.637758"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 361], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.641427"], ["updated_at", "2019-03-28 13:09:33.641427"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=48"], ["title", "post48"], ["description", "here is the description for post48"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.647032"], ["updated_at", "2019-03-28 13:09:33.647032"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 362], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.649530"], ["updated_at", "2019-03-28 13:09:33.649530"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 362], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.654151"], ["updated_at", "2019-03-28 13:09:33.654151"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=49"], ["title", "post49"], ["description", "here is the description for post49"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.663380"], ["updated_at", "2019-03-28 13:09:33.663380"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 363], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.664875"], ["updated_at", "2019-03-28 13:09:33.664875"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 363], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.668542"], ["updated_at", "2019-03-28 13:09:33.668542"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Vintage"], ["id", 45], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Vintage?random=50"], ["title", "post50"], ["description", "here is the description for post50"], ["user_id", 45], ["created_at", "2019-03-28 13:09:33.674238"], ["updated_at", "2019-03-28 13:09:33.674238"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 364], ["tag_id", 45], ["created_at", "2019-03-28 13:09:33.677029"], ["updated_at", "2019-03-28 13:09:33.677029"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 364], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.681371"], ["updated_at", "2019-03-28 13:09:33.681371"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=51"], ["title", "post51"], ["description", "here is the description for post51"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.688489"], ["updated_at", "2019-03-28 13:09:33.688489"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 365], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.690310"], ["updated_at", "2019-03-28 13:09:33.690310"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 365], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.693632"], ["updated_at", "2019-03-28 13:09:33.693632"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=52"], ["title", "post52"], ["description", "here is the description for post52"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.701119"], ["updated_at", "2019-03-28 13:09:33.701119"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 366], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.704504"], ["updated_at", "2019-03-28 13:09:33.704504"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 366], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.708291"], ["updated_at", "2019-03-28 13:09:33.708291"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=53"], ["title", "post53"], ["description", "here is the description for post53"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.713553"], ["updated_at", "2019-03-28 13:09:33.713553"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 367], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.715208"], ["updated_at", "2019-03-28 13:09:33.715208"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 367], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.718435"], ["updated_at", "2019-03-28 13:09:33.718435"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=54"], ["title", "post54"], ["description", "here is the description for post54"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.723577"], ["updated_at", "2019-03-28 13:09:33.723577"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 368], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.725042"], ["updated_at", "2019-03-28 13:09:33.725042"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 368], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.730167"], ["updated_at", "2019-03-28 13:09:33.730167"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=55"], ["title", "post55"], ["description", "here is the description for post55"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.736229"], ["updated_at", "2019-03-28 13:09:33.736229"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 369], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.737680"], ["updated_at", "2019-03-28 13:09:33.737680"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 369], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.740889"], ["updated_at", "2019-03-28 13:09:33.740889"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=56"], ["title", "post56"], ["description", "here is the description for post56"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.746552"], ["updated_at", "2019-03-28 13:09:33.746552"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 370], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.748198"], ["updated_at", "2019-03-28 13:09:33.748198"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 370], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.751817"], ["updated_at", "2019-03-28 13:09:33.751817"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=57"], ["title", "post57"], ["description", "here is the description for post57"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.757997"], ["updated_at", "2019-03-28 13:09:33.757997"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 371], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.760618"], ["updated_at", "2019-03-28 13:09:33.760618"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 371], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.765999"], ["updated_at", "2019-03-28 13:09:33.765999"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=58"], ["title", "post58"], ["description", "here is the description for post58"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.778113"], ["updated_at", "2019-03-28 13:09:33.778113"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 372], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.779853"], ["updated_at", "2019-03-28 13:09:33.779853"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 372], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.784689"], ["updated_at", "2019-03-28 13:09:33.784689"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=59"], ["title", "post59"], ["description", "here is the description for post59"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.792497"], ["updated_at", "2019-03-28 13:09:33.792497"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 373], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.794584"], ["updated_at", "2019-03-28 13:09:33.794584"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 373], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.798564"], ["updated_at", "2019-03-28 13:09:33.798564"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Space"], ["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Space?random=60"], ["title", "post60"], ["description", "here is the description for post60"], ["user_id", 46], ["created_at", "2019-03-28 13:09:33.804977"], ["updated_at", "2019-03-28 13:09:33.804977"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 374], ["tag_id", 46], ["created_at", "2019-03-28 13:09:33.806507"], ["updated_at", "2019-03-28 13:09:33.806507"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 374], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.811221"], ["updated_at", "2019-03-28 13:09:33.811221"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=61"], ["title", "post61"], ["description", "here is the description for post61"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.817314"], ["updated_at", "2019-03-28 13:09:33.817314"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 375], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.818745"], ["updated_at", "2019-03-28 13:09:33.818745"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 375], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.822995"], ["updated_at", "2019-03-28 13:09:33.822995"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=62"], ["title", "post62"], ["description", "here is the description for post62"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.828214"], ["updated_at", "2019-03-28 13:09:33.828214"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 376], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.830121"], ["updated_at", "2019-03-28 13:09:33.830121"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 376], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.834230"], ["updated_at", "2019-03-28 13:09:33.834230"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=63"], ["title", "post63"], ["description", "here is the description for post63"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.844272"], ["updated_at", "2019-03-28 13:09:33.844272"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 377], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.846190"], ["updated_at", "2019-03-28 13:09:33.846190"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 377], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.849353"], ["updated_at", "2019-03-28 13:09:33.849353"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=64"], ["title", "post64"], ["description", "here is the description for post64"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.858294"], ["updated_at", "2019-03-28 13:09:33.858294"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 378], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.860125"], ["updated_at", "2019-03-28 13:09:33.860125"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 378], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.864702"], ["updated_at", "2019-03-28 13:09:33.864702"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=65"], ["title", "post65"], ["description", "here is the description for post65"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.872972"], ["updated_at", "2019-03-28 13:09:33.872972"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 379], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.875629"], ["updated_at", "2019-03-28 13:09:33.875629"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 379], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.879844"], ["updated_at", "2019-03-28 13:09:33.879844"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=66"], ["title", "post66"], ["description", "here is the description for post66"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.886443"], ["updated_at", "2019-03-28 13:09:33.886443"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 380], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.888591"], ["updated_at", "2019-03-28 13:09:33.888591"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 380], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.891554"], ["updated_at", "2019-03-28 13:09:33.891554"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=67"], ["title", "post67"], ["description", "here is the description for post67"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.898870"], ["updated_at", "2019-03-28 13:09:33.898870"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 381], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.900739"], ["updated_at", "2019-03-28 13:09:33.900739"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 381], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.904023"], ["updated_at", "2019-03-28 13:09:33.904023"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=68"], ["title", "post68"], ["description", "here is the description for post68"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.909746"], ["updated_at", "2019-03-28 13:09:33.909746"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 382], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.912267"], ["updated_at", "2019-03-28 13:09:33.912267"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 382], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.915597"], ["updated_at", "2019-03-28 13:09:33.915597"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=69"], ["title", "post69"], ["description", "here is the description for post69"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.920766"], ["updated_at", "2019-03-28 13:09:33.920766"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 383], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.922890"], ["updated_at", "2019-03-28 13:09:33.922890"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 383], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.926618"], ["updated_at", "2019-03-28 13:09:33.926618"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Dark"], ["id", 47], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Dark?random=70"], ["title", "post70"], ["description", "here is the description for post70"], ["user_id", 47], ["created_at", "2019-03-28 13:09:33.935436"], ["updated_at", "2019-03-28 13:09:33.935436"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 384], ["tag_id", 47], ["created_at", "2019-03-28 13:09:33.937197"], ["updated_at", "2019-03-28 13:09:33.937197"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 384], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.940411"], ["updated_at", "2019-03-28 13:09:33.940411"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=71"], ["title", "post71"], ["description", "here is the description for post71"], ["user_id", 48], ["created_at", "2019-03-28 13:09:33.945849"], ["updated_at", "2019-03-28 13:09:33.945849"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 385], ["tag_id", 48], ["created_at", "2019-03-28 13:09:33.948301"], ["updated_at", "2019-03-28 13:09:33.948301"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 385], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.953297"], ["updated_at", "2019-03-28 13:09:33.953297"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=72"], ["title", "post72"], ["description", "here is the description for post72"], ["user_id", 48], ["created_at", "2019-03-28 13:09:33.960682"], ["updated_at", "2019-03-28 13:09:33.960682"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 386], ["tag_id", 48], ["created_at", "2019-03-28 13:09:33.963330"], ["updated_at", "2019-03-28 13:09:33.963330"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 386], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.969589"], ["updated_at", "2019-03-28 13:09:33.969589"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=73"], ["title", "post73"], ["description", "here is the description for post73"], ["user_id", 48], ["created_at", "2019-03-28 13:09:33.980061"], ["updated_at", "2019-03-28 13:09:33.980061"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 387], ["tag_id", 48], ["created_at", "2019-03-28 13:09:33.981848"], ["updated_at", "2019-03-28 13:09:33.981848"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 387], ["user_id", 41], ["created_at", "2019-03-28 13:09:33.985448"], ["updated_at", "2019-03-28 13:09:33.985448"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=74"], ["title", "post74"], ["description", "here is the description for post74"], ["user_id", 48], ["created_at", "2019-03-28 13:09:33.996838"], ["updated_at", "2019-03-28 13:09:33.996838"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 388], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.008400"], ["updated_at", "2019-03-28 13:09:34.008400"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 388], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.014414"], ["updated_at", "2019-03-28 13:09:34.014414"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=75"], ["title", "post75"], ["description", "here is the description for post75"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.022450"], ["updated_at", "2019-03-28 13:09:34.022450"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 389], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.024140"], ["updated_at", "2019-03-28 13:09:34.024140"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 389], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.027869"], ["updated_at", "2019-03-28 13:09:34.027869"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=76"], ["title", "post76"], ["description", "here is the description for post76"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.037367"], ["updated_at", "2019-03-28 13:09:34.037367"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 390], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.040633"], ["updated_at", "2019-03-28 13:09:34.040633"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 390], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.045108"], ["updated_at", "2019-03-28 13:09:34.045108"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=77"], ["title", "post77"], ["description", "here is the description for post77"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.051908"], ["updated_at", "2019-03-28 13:09:34.051908"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 391], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.055000"], ["updated_at", "2019-03-28 13:09:34.055000"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 391], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.060000"], ["updated_at", "2019-03-28 13:09:34.060000"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=78"], ["title", "post78"], ["description", "here is the description for post78"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.066103"], ["updated_at", "2019-03-28 13:09:34.066103"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 392], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.067927"], ["updated_at", "2019-03-28 13:09:34.067927"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 392], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.072303"], ["updated_at", "2019-03-28 13:09:34.072303"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=79"], ["title", "post79"], ["description", "here is the description for post79"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.079339"], ["updated_at", "2019-03-28 13:09:34.079339"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 393], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.081141"], ["updated_at", "2019-03-28 13:09:34.081141"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 393], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.084771"], ["updated_at", "2019-03-28 13:09:34.084771"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Food"], ["id", 48], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Food?random=80"], ["title", "post80"], ["description", "here is the description for post80"], ["user_id", 48], ["created_at", "2019-03-28 13:09:34.091480"], ["updated_at", "2019-03-28 13:09:34.091480"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 394], ["tag_id", 48], ["created_at", "2019-03-28 13:09:34.093249"], ["updated_at", "2019-03-28 13:09:34.093249"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 394], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.097124"], ["updated_at", "2019-03-28 13:09:34.097124"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=81"], ["title", "post81"], ["description", "here is the description for post81"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.103889"], ["updated_at", "2019-03-28 13:09:34.103889"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 395], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.105418"], ["updated_at", "2019-03-28 13:09:34.105418"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 395], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.109449"], ["updated_at", "2019-03-28 13:09:34.109449"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=82"], ["title", "post82"], ["description", "here is the description for post82"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.115492"], ["updated_at", "2019-03-28 13:09:34.115492"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 396], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.117106"], ["updated_at", "2019-03-28 13:09:34.117106"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 396], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.123403"], ["updated_at", "2019-03-28 13:09:34.123403"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=83"], ["title", "post83"], ["description", "here is the description for post83"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.148558"], ["updated_at", "2019-03-28 13:09:34.148558"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 397], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.151632"], ["updated_at", "2019-03-28 13:09:34.151632"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 397], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.158575"], ["updated_at", "2019-03-28 13:09:34.158575"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=84"], ["title", "post84"], ["description", "here is the description for post84"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.172471"], ["updated_at", "2019-03-28 13:09:34.172471"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 398], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.173834"], ["updated_at", "2019-03-28 13:09:34.173834"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 398], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.177115"], ["updated_at", "2019-03-28 13:09:34.177115"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=85"], ["title", "post85"], ["description", "here is the description for post85"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.183046"], ["updated_at", "2019-03-28 13:09:34.183046"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 399], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.184617"], ["updated_at", "2019-03-28 13:09:34.184617"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 399], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.188128"], ["updated_at", "2019-03-28 13:09:34.188128"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=86"], ["title", "post86"], ["description", "here is the description for post86"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.194363"], ["updated_at", "2019-03-28 13:09:34.194363"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 400], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.196569"], ["updated_at", "2019-03-28 13:09:34.196569"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 400], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.200822"], ["updated_at", "2019-03-28 13:09:34.200822"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=87"], ["title", "post87"], ["description", "here is the description for post87"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.207667"], ["updated_at", "2019-03-28 13:09:34.207667"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 401], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.210156"], ["updated_at", "2019-03-28 13:09:34.210156"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 401], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.214854"], ["updated_at", "2019-03-28 13:09:34.214854"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=88"], ["title", "post88"], ["description", "here is the description for post88"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.225265"], ["updated_at", "2019-03-28 13:09:34.225265"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 402], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.227669"], ["updated_at", "2019-03-28 13:09:34.227669"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 402], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.232470"], ["updated_at", "2019-03-28 13:09:34.232470"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=89"], ["title", "post89"], ["description", "here is the description for post89"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.239669"], ["updated_at", "2019-03-28 13:09:34.239669"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 403], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.242320"], ["updated_at", "2019-03-28 13:09:34.242320"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 403], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.247941"], ["updated_at", "2019-03-28 13:09:34.247941"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Animals"], ["id", 49], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Animals?random=90"], ["title", "post90"], ["description", "here is the description for post90"], ["user_id", 49], ["created_at", "2019-03-28 13:09:34.256661"], ["updated_at", "2019-03-28 13:09:34.256661"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 404], ["tag_id", 49], ["created_at", "2019-03-28 13:09:34.260131"], ["updated_at", "2019-03-28 13:09:34.260131"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 404], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.267443"], ["updated_at", "2019-03-28 13:09:34.267443"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=91"], ["title", "post91"], ["description", "here is the description for post91"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.276072"], ["updated_at", "2019-03-28 13:09:34.276072"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 405], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.278613"], ["updated_at", "2019-03-28 13:09:34.278613"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 405], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.283716"], ["updated_at", "2019-03-28 13:09:34.283716"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=92"], ["title", "post92"], ["description", "here is the description for post92"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.291566"], ["updated_at", "2019-03-28 13:09:34.291566"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 406], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.294204"], ["updated_at", "2019-03-28 13:09:34.294204"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 406], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.308247"], ["updated_at", "2019-03-28 13:09:34.308247"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=93"], ["title", "post93"], ["description", "here is the description for post93"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.315701"], ["updated_at", "2019-03-28 13:09:34.315701"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 407], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.317852"], ["updated_at", "2019-03-28 13:09:34.317852"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 407], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.322378"], ["updated_at", "2019-03-28 13:09:34.322378"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=94"], ["title", "post94"], ["description", "here is the description for post94"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.331807"], ["updated_at", "2019-03-28 13:09:34.331807"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 408], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.333947"], ["updated_at", "2019-03-28 13:09:34.333947"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 408], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.338307"], ["updated_at", "2019-03-28 13:09:34.338307"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=95"], ["title", "post95"], ["description", "here is the description for post95"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.348458"], ["updated_at", "2019-03-28 13:09:34.348458"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 409], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.350867"], ["updated_at", "2019-03-28 13:09:34.350867"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 409], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.357200"], ["updated_at", "2019-03-28 13:09:34.357200"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=96"], ["title", "post96"], ["description", "here is the description for post96"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.366941"], ["updated_at", "2019-03-28 13:09:34.366941"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 410], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.369548"], ["updated_at", "2019-03-28 13:09:34.369548"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 410], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.377000"], ["updated_at", "2019-03-28 13:09:34.377000"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=97"], ["title", "post97"], ["description", "here is the description for post97"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.383979"], ["updated_at", "2019-03-28 13:09:34.383979"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 411], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.386214"], ["updated_at", "2019-03-28 13:09:34.386214"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 411], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.390950"], ["updated_at", "2019-03-28 13:09:34.390950"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=98"], ["title", "post98"], ["description", "here is the description for post98"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.399275"], ["updated_at", "2019-03-28 13:09:34.399275"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 412], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.415013"], ["updated_at", "2019-03-28 13:09:34.415013"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 412], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.419329"], ["updated_at", "2019-03-28 13:09:34.419329"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=99"], ["title", "post99"], ["description", "here is the description for post99"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.426465"], ["updated_at", "2019-03-28 13:09:34.426465"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 413], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.428558"], ["updated_at", "2019-03-28 13:09:34.428558"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 413], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.433729"], ["updated_at", "2019-03-28 13:09:34.433729"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTag Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tags" WHERE "tags"."name" = ? AND ("tags"."id" != ?) LIMIT ?[0m  [["name", "Technics"], ["id", 50], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("img_url", "title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["img_url", "https://loremflickr.com/320/240/Technics?random=100"], ["title", "post100"], ["description", "here is the description for post100"], ["user_id", 50], ["created_at", "2019-03-28 13:09:34.444931"], ["updated_at", "2019-03-28 13:09:34.444931"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "posts_tags" ("post_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 414], ["tag_id", 50], ["created_at", "2019-03-28 13:09:34.447353"], ["updated_at", "2019-03-28 13:09:34.447353"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 414], ["user_id", 41], ["created_at", "2019-03-28 13:09:34.458955"], ["updated_at", "2019-03-28 13:09:34.458955"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2019-03-28 09:10:13 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (52.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 717ms (Views: 687.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-28 09:12:03 -0400
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 131.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tags" for ::1 at 2019-03-28 09:14:40 -0400
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (1.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  Rendered tags/index.html.erb within layouts/application (49.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 303ms (Views: 238.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tags/41" for ::1 at 2019-03-28 09:14:43 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering tags/show.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "posts_tags" ON "posts"."id" = "posts_tags"."post_id" WHERE "posts_tags"."tag_id" = ?[0m  [["tag_id", 41]]
+  Rendered tags/show.html.erb within layouts/application (76.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+Completed 200 OK in 126ms (Views: 111.9ms | ActiveRecord: 1.7ms)
+
+

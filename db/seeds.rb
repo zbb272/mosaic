@@ -31,11 +31,11 @@ tags << Tag.create(name: "Weather")
 tags << Tag.create(name: "Portait")
 tags << Tag.create(name: "Colorful")
 tags << Tag.create(name: "Vintage")
-tags << Tag.create(name: "Weird")
+tags << Tag.create(name: "Space")
 tags << Tag.create(name: "Dark")
 tags << Tag.create(name: "Food")
 tags << Tag.create(name: "Animals")
-tags << Tag.create(name: "Party")
+tags << Tag.create(name: "Technics")
 
 #make posts and likes
 i = 1
