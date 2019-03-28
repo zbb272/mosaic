@@ -2,9 +2,15 @@ class PostsController < ApplicationController
 
   def create_like
     @post = Post.find(params[:id])
-    @post.likes << Like.create(:user_id => session["user_id"])
+    checker = Like.find_by(user_id: session["user_id"], post_id: params[:id])
+    if !checker.nil?
+      checker.destroy
+      redirect_to post_path(@post)
+    else
+      @post.likes << Like.create(:user_id => session["user_id"])
     # byebug
-    redirect_to post_path(@post)
+      redirect_to post_path(@post)
+    end
   end
 
   def index

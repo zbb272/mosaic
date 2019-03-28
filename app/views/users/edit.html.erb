@@ -1,0 +1,19 @@
+<h1> Edit Your Profile </h1>
+
+<%= form_for @user do |u|  %>
+
+  <%= u.label :first_name %>
+  <%= u.text_field :first_name %><br>
+  <br>
+
+  <%= u.label :last_name %>
+  <%= u.text_field :last_name %><br>
+  <br>
+
+  <%= u.label :bio %>
+  <%= u.text_area :bio %><br>
+  <br>
+
+  <%= u.submit "Submit your changes!" %>
+
+<% end %>
