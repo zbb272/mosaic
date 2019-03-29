@@ -1,32 +1,39 @@
-<h1> Upload a Post! </h1>
+<div class="post_new_full">
 
-<%= form_for @post do |p|  %>
-  <%= p.label :img_url %>
-  <%= p.text_field :img_url %><br>
-  <br>
+  <h1> Upload a Post! </h1>
 
-  <%# <%= p.file_field :picture, direct_upload: true %> 
-  <br><br>
+  <%= form_for @post do |p|  %>
+    <%= p.label :img_url %>
+    <%= p.text_field :img_url %><br>
+    <br>
 
-  <%= p.label :title %>
-  <%= p.text_field :title %><br>
-  <br>
+    <%# <%= p.file_field :picture, direct_upload: true %>
 
-  <%= p.label :description%>
-  <%= p.text_field :description%><br>
-  <br>
 
-  <%= p.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
-  <br>
+    <%= p.label :title %>
+    <%= p.text_field :title %><br>
+    <br>
 
-  Create a new tag: <br>
-  <%= p.fields_for :tags do |tag_attributes| %>
-    <%= tag_attributes.label :name %>
-    <%= tag_attributes.text_field :name %>
-  <% end %>
+    <%= p.label :description%>
+    <%= p.text_field :description%><br>
+    <br>
 
-  <br><br>
 
-  <%= p.submit "Upload Your Junk!" %>
+    <div class="checkboxes">
+    <%= p.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
+    <br>
+  </div>
 
-  <% end %>
+    Create a new tag: <br>
+    <%= p.fields_for :tags do |tag_attributes| %>
+      <%= tag_attributes.label :name %>
+      <%= tag_attributes.text_field :name%>
+    <% end %>
+
+    <br><br>
+
+    <%= p.submit "Upload Your Junk!" %>
+
+    <% end %>
+
+</div>
