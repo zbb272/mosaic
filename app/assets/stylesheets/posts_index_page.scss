@@ -1,0 +1,19 @@
+.navbar {
+  visibility: visible;
+}
+
+.post_index_box {
+  border: 4px solid teal;
+  margin-left: 0px;
+  margin-right: 0px;
+  // margin: 0px;
+  padding: 0px;
+  // display: flex;
+}
+.post_index_link {
+
+}
+.post_index_link:hover {
+  filter: blur(4px);
+  // filter: grayscale(75%);
+}

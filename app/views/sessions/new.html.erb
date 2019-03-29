@@ -1,13 +1,25 @@
-<h1>Log in, homes!</h1>
-
+<div class="text-center">
+<div class="login_page">
+<div class="login_page_title">
+  <h1>Mosiac</h1>
+</div>
+<div class="container">
+<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 <div class="error"><%= flash["notice"] %></div>
 
-<%= form_tag "/login" do %>
-  <%= label :username, "Username" %>
-  <%= text_field_tag :username %>
+<%= form_tag "/login", class: "form-group signup-form" do %>
+  <div class="form-control form-control-lg">
+    <%= label :username, "Username", class: "sr-only"%>
+    <%= text_field_tag :username, nil, placeholder: "Enter Username", class: "login_form_field" %>
+  </div>
+  <div class="form-control form-control-lg">
+    <%= label :password, "Password", class: "sr-only" %>
+    <%= password_field_tag :password, nil, placeholder: "Password", class: "login_form_field" %>
+  </div>
 
-  <%= label :password, "Password" %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag "Login" %>
+  <%= submit_tag "Login", class: "btn btn-lg btn-primary btn-block"%>
 <% end %>
+</div>
+
+</div>
+</div>

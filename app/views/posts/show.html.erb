@@ -1,39 +1,56 @@
-<h1><%= @post.title %></h1>
-<h2>Uploaded by: <%= link_to @post.user.username, user_path(@post.user) %></h2>
+<div class="post_show_page">
 
-<% if session["user_id"] == @post.user.id %>
-  <h4><%= link_to "Edit", edit_post_path %></h4>
-  <h4><%= form_tag @post, method: "DELETE" do %>
-    <%= submit_tag "Delete" %>
-  <% end %></h4>
-<% end %>
+  <div class="post_show_title_username">
+    <h1 class="post_show_title"><%= @post.title %></h1>
+    <h2 class="post_show_username">Uploaded by: <%= link_to @post.user.username, user_path(@post.user) %></h2>
+  </div>
 
-<%# <% if @post.picture.attached? %>
-  <%# <%= image_tag(@post.picture) %>
-<%# <% else %>
-<br>
-  <%= image_tag(@post.img_url) %>
-<br>
-<%# <% end %>
+  <div class="post_show_edit_delete">
+    <% if session["user_id"] == @post.user.id %>
+      <h4><%= link_to "Edit", edit_post_path %></h4>
+      <h4><%=  form_tag @post, method: "DELETE" do %>
+        <%= submit_tag "Delete" %>
+      <% end %></h4>
+    <% end %>
+  </div>
 
-<h4>Description:</h4>
-<p><%= @post.description %></p>
+  <%# <% if @post.picture.attached? %>
+    <%# <%= image_tag(@post.picture) %>
+  <%# <% else %>
+  <br>
+    <%= image_tag(@post.img_url, class: "post_show_image") %>
+  <br>
+  <%# <% end %>
 
-<h4>Tags:</h4>
-<ul>
-  <% @post.tags.each do | tag | %>
-    <li><%= link_to tag.name, tag_path(tag) %></li>
-  <% end %>
-</ul>
-<br>
-<% if current_user %>
-  <%= link_to "Like", new_like_path, method: :post %>
-<% end %>
+  <div class="posts_show_description">
+    <h4>Description:</h4>
+    <p><%= @post.description %></p>
+  </div>
 
-<br>
-<h4>Likes:</h4>
-<ul>
-  <% @post.likes.each do |like| %>
-    <li> Liked by: <%= like.user.username %></li>
-  <% end %>
-</ul>
+  <div class="posts_show_all_tags">
+    <h4>Tags:</h4>
+    <ul>
+      <% @post.tags.each do | tag | %>
+        <li><%= link_to tag.name, tag_path(tag) %></li>
+      <% end %>
+    </ul>
+    <br>
+  </div>
+
+  <div class="posts_show_like_button">
+    <% if current_user %>
+      <%= link_to "Like", new_like_path, method: :post %>
+    <% end %>
+  </div>
+
+  <br>
+  <div class="posts_show_all_likes">
+    <h4>Likes:</h4>
+    <ul>
+      <% @post.likes.each do |like| %>
+        <li> Liked by: <%= like.user.username %></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

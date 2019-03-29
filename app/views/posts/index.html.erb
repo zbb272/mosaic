@@ -1,6 +1,8 @@
-<h1>All posts: </h1>
-<ul>
+
+<!-- <ul> -->
   <% @posts.each do | post | %>
-    <%= link_to image_tag(post.img_url), post_path(post) %>
+    <!-- <div class="post_index_box"> -->
+    <%= link_to(image_tag(post.img_url, class: "post_index_box" ), post_path(post), class: "post_index_link") %>
+    <!-- </div> -->
   <% end %>
-</ul>
+<!-- </ul> -->
