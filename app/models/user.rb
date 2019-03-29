@@ -22,9 +22,9 @@ class User < ApplicationRecord
     sorted_liked_tags = liked_tags.sort_by do | tag, number_of_likes |
       number_of_likes
     end
-    sorted_liked_tags.collect do | tag, num |
-      tag
-    end
+    # sorted_liked_tags.collect do | tag, num |
+    #   tag
+    # end
   end
 
   #returns sorted array of users liked by user in order of most likes
@@ -40,9 +40,9 @@ class User < ApplicationRecord
     sorted_liked_users = liked_users.sort_by do | user, number_of_likes |
       number_of_likes
     end
-    sorted_liked_users.collect do | user, num |
-      user
-    end
+    # sorted_liked_users.collect do | user, num |
+    #   user
+    # end
   end
 
   def liked_posts
@@ -64,4 +64,25 @@ class User < ApplicationRecord
     # posts += (Post.all - posts).sample(100 - posts.length)
     # posts
   end
+
+  def self.user_with_most_posts
+    user_with_most = nil
+    User.all.each do | user |
+      if user.posts.count > user_with_most.posts.count
+        user_with_most = user
+      end
+    end
+    user_with_most
+  end
+
+  # def self.user_with_most_likes
+  #   user_with_most = nil
+  #   most_likes = 0
+  #   User.all.each do | user |
+  #     user.posts.each do | post |
+  #
+  #     end
+  #   end
+  # end
+
 end

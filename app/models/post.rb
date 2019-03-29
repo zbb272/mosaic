@@ -23,4 +23,23 @@ class Post < ApplicationRecord
   validates_with TagValidate
   accepts_nested_attributes_for :tags, :reject_if => proc{ |attributes| attributes[:name].blank? }
 
+
+  def self.post_with_most_likes
+    most_liked = nil
+    Post.all.each do | post |
+      if post.likes.count > most_liked.likes.count
+        most_liked = post
+      end
+    end
+    most_liked
+  end
+
+  def self.post_with_most_tags
+    most_tags = nil
+    Posts.all.each do | post |
+      if post.tags.count > most_tags.tags.count
+        most_tags = post
+      end
+    end
+  end
 end
